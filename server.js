@@ -35,12 +35,6 @@ app.get('/', (request, response) => {
   response.status(200).send('Welcome to my server');
 });
 
-app.get('/hello', (request, response) => {
-  console.log(request.query);
-  let firstName = request.query.firstName;
-  let lastName = request.query.lastName;
-  response.status(200).send(`Hello ${firstName} ${lastName}! Welcome to my server!`);
-});
 
 app.get('/weather', (error, request, response, next) => {
   try {
@@ -79,4 +73,4 @@ app.get('*', (request, response) => {
 }); */
 
 // ***** SERVER START *****
-// app.listen(PORT, () => console.log(`We are up and running on port ${PORT}`));
+app.listen(PORT, () => console.log(`We are up and running on port ${PORT}`));
