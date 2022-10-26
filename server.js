@@ -33,13 +33,6 @@ app.get('/', (request, response) => {
   response.status(200).send('Welcome to my server');
 });
 
-app.get('/hello', (request, response) => {
-  console.log(request.query);
-  let firstName = request.query.firstName;
-  let lastName = request.query.lastName;
-  response.status(200).send(`Hello ${firstName} ${lastName}! Welcome to my server!`);
-});
-
 app.get('/weather', async (request, response, next) => {
   try {
     let lat = request.query.lat;
