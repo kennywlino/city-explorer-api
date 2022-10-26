@@ -28,9 +28,9 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ### Class 07
 
-| #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
-| --- | ------------------------ | -------------------- | ---------- | ----------- | ----------------- |
-| 1   | Set up server repository | 0:30                 | 2:30pm     | 3:00pm      | 0:30              |
-| 2   | Weather (placeholder)    | 1:00                 | 3:00pm     |             |                   |
-| 3   |                          |                      |            |             |                   |
-| 4   |                          |                      |            |             |                   |
+| #   | Name of feature                | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ------------------------------ | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Set up server repository       | 0:30                 | 2:30pm     | 3:00pm      | 0:30              |
+| 2   | Weather back-end (placeholder) | 1:00                 | 3:00pm     | 4:30pm      | 1:10 (w/ break)   |
+|     |                                |                      |            |             |                   |
+| 4   |                                |                      |            |             |                   |

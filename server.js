@@ -42,19 +42,20 @@ app.get('/hello', (request, response) => {
   response.status(200).send(`Hello ${firstName} ${lastName}! Welcome to my server!`);
 });
 
-app.get('/weather', (request, response, next) => {
+app.get('/weather', (error, request, response, next) => {
   try {
     let searchQuery = request.query.searchQuery;
     let lat = request.query.lat;
     let lon = request.query.lon;
 
-
-    let weatherData = data.find(element => element.city_name === searchQuery && element.lat === lat && element.lon === lon);
+    // commenting out this line since lat/lon from WeatherIQ API is not matching the sample data
+    // let weatherData = data.find(element => element.city_name === searchQuery && element.lat === lat && element.lon === lon);
+    let weatherData = data.find(element => element.city_name === searchQuery);
     let forecastList = weatherData.data.map(element => new Forecast(element));
-    console.log(forecastList);
     response.status(200).send(forecastList);
   } catch(error) {
     next(error);
+    response.status(500).send(error.message);
   }
 });
 
@@ -64,20 +65,6 @@ class Forecast {
     this.description = `Low of ${forecastData.low_temp}, high of ${forecastData.max_temp} with ${forecastData.weather.description}`;
   }
 }
-
-
-// with Audrey's pets example
-// get pets data from her repo
-/* app.get('/pet', (request, response, next) => {
-  try {
-    let species = request.query.species;
-    let petData = data.find(pet => pet.species === species);
-    // must send response or the browser will spool or loop over and over
-    response.status(200).send(petData);
-  } catch(error) {
-    next(error);
-  }
-}); */
 
 // catch all and should live at the bottom
 app.get('*', (request, response) => {
@@ -92,4 +79,4 @@ app.get('*', (request, response) => {
 }); */
 
 // ***** SERVER START *****
-app.listen(PORT, () => console.log(`We are up and running on port ${PORT}`));
+// app.listen(PORT, () => console.log(`We are up and running on port ${PORT}`));
