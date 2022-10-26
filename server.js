@@ -1,7 +1,5 @@
 'use strict';
 
-const { response } = require('express');
-
 // ***** REQUIRES *****
 
 const express = require('express');
@@ -9,8 +7,9 @@ const express = require('express');
 require('dotenv').config();
 
 const cors = require('cors');
+const axios = require('axios');
 
-let data = require('./data/weather.json');
+// let data = require('./data/weather.json');
 
 
 // once express is in we need to use it -- per express docs
@@ -41,15 +40,19 @@ app.get('/hello', (request, response) => {
   response.status(200).send(`Hello ${firstName} ${lastName}! Welcome to my server!`);
 });
 
-app.get('/weather', (request, response, next) => {
+app.get('/weather', async (request, response, next) => {
   try {
-    let searchQuery = request.query.searchQuery;
     let lat = request.query.lat;
     let lon = request.query.lon;
+    let numOfDays = 7;
 
-    // commenting out this line since lat/lon from WeatherIQ API is not matching the sample data
-    // let weatherData = data.find(element => element.city_name === searchQuery && element.lat === lat && element.lon === lon);
-    let weatherData = data.find(element => element.city_name === searchQuery);
+    // commenting out this line since lat/lon from LocationIQ API is not matching the sample data
+    //let weatherData = data.find(element => element.city_name === searchQuery && element.lat === lat && element.lon === lon);
+    // let cityWeatherData = data.find(element => element.city_name === cityName);
+
+    let weatherDataUrl = `http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lat=${lat}&lon=${lon}&days=${numOfDays}`;
+    let weatherData = await axios.get(weatherDataUrl);
+    weatherData = weatherData.data;
     let forecastList = weatherData.data.map(element => new Forecast(element));
     response.status(200).send(forecastList);
   } catch(error) {

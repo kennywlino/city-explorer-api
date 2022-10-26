@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.0
+**Version**: 1.0.1
 
 ## Overview
 
@@ -20,11 +20,21 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Change Log
 
-10-25-2022 -- Set up server to handle sample map data.
+10-26-2022 -- Added Weatherbit and Movie DB APIs to server.
+10-25-2022 -- Set up server to handle sample weather data.
 
 ## Credit and Collaborations
 
 ## Time Estimates
+
+### Class 08
+
+| #   | Name of feature         | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ----------------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Weather back-end (live) | 1:00                 | 2:45pm     | 3:45pm      | 1:00              |
+| 2   |                         |                      |            |             |                   |
+|     |                         |                      |            |             |                   |
+|     |                         |                      |            |             |                   |
 
 ### Class 07
 
@@ -33,4 +43,4 @@ This project utilizes JavaScript and the Express library to handle the server.
 | 1   | Set up server repository       | 0:30                 | 2:30pm     | 3:00pm      | 0:30              |
 | 2   | Weather back-end (placeholder) | 1:00                 | 3:00pm     | 4:30pm      | 1:10 (w/ break)   |
 |     |                                |                      |            |             |                   |
-| 4   |                                |                      |            |             |                   |
+|     |                                |                      |            |             |                   |
