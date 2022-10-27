@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.1
+**Version**: 1.0.2
 
 ## Overview
 
@@ -20,6 +20,7 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Change Log
 
+10-27-2022 -- Modularized weather and movie getting functions under separate files in 'modules' folder.
 10-26-2022 -- Added Weatherbit and Movie DB APIs to server.
 10-25-2022 -- Set up server to handle sample weather data.
 
@@ -31,7 +32,7 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 | #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ------------------------ | -------------------- | ---------- | ----------- | ----------------- |
-| 1   | Modularize back-end code | 0:30                 | 3:00pm     |             |                   |
+| 1   | Modularize back-end code | 0:30                 | 3:00pm     | 3:20pm      | 0:20              |
 
 ### Class 08
 
