@@ -27,12 +27,18 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Time Estimates
 
+### Class 09
+
+| #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ------------------------ | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Modularize back-end code | 0:30                 | 3:00pm     |             |                   |
+
 ### Class 08
 
 | #   | Name of feature         | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ----------------------- | -------------------- | ---------- | ----------- | ----------------- |
 | 1   | Weather back-end (live) | 1:00                 | 2:45pm     | 3:45pm      | 1:00              |
-| 2   | Movies                  | 1:00                 | 4:10pm     | 5:25pm      | 1:15                  |
+| 2   | Movies                  | 1:00                 | 4:10pm     | 5:25pm      | 1:15              |
 |     |                         |                      |            |             |                   |
 |     |                         |                      |            |             |                   |
 
