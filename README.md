@@ -32,7 +32,7 @@ This project utilizes JavaScript and the Express library to handle the server.
 | #   | Name of feature         | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ----------------------- | -------------------- | ---------- | ----------- | ----------------- |
 | 1   | Weather back-end (live) | 1:00                 | 2:45pm     | 3:45pm      | 1:00              |
-| 2   |                         |                      |            |             |                   |
+| 2   | Movies                  | 1:00                 | 4:10pm     |             |                   |
 |     |                         |                      |            |             |                   |
 |     |                         |                      |            |             |                   |
 
