@@ -28,6 +28,10 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Time Estimates
 
+| #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ------------------------ | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Performance: Adding cache | 0:45                 | 6:20pm    |       | 0:20              |
+
 ### Class 09
 
 | #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
