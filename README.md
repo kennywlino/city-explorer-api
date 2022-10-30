@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.2
+**Version**: 1.0.3
 
 ## Overview
 
@@ -20,6 +20,7 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Change Log
 
+10-29-2022 -- Added a cache to store movies and weather data to prevent frequent API calls.
 10-27-2022 -- Modularized weather and movie getting functions under separate files in 'modules' folder.
 10-26-2022 -- Added Weatherbit and Movie DB APIs to server.
 10-25-2022 -- Set up server to handle sample weather data.
@@ -28,9 +29,9 @@ This project utilizes JavaScript and the Express library to handle the server.
 
 ## Time Estimates
 
-| #   | Name of feature          | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
-| --- | ------------------------ | -------------------- | ---------- | ----------- | ----------------- |
-| 1   | Performance: Adding cache | 0:45                 | 6:20pm    |       | 0:20              |
+| #   | Name of feature           | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ------------------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Performance: Adding cache | 0:45                 | 6:20pm     | 7:10        | 0:50              |
 
 ### Class 09
 
