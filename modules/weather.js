@@ -19,7 +19,6 @@ async function getWeather(request, response) {
     cache[key].data = await axios.get(url)
       .then(response => parseWeather(response.data));
   }
-  console.log(cache[key].data);
   response.status(200).send(cache[key].data);
 }
 
