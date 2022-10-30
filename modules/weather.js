@@ -10,7 +10,8 @@ async function getWeather(request, response) {
   const key = 'weather-' + latitude + longitude;
   const url = `http://api.weatherbit.io/v2.0/forecast/daily/?key=${process.env.WEATHER_API_KEY}&lang=en&lat=${latitude}&lon=${longitude}&days=5`;
 
-  if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+  // 4.32e+7 = 12 hours
+  if (cache[key] && (Date.now() - cache[key].timestamp < 4.32e+7)) {
     console.log('Cache hit');
   } else {
     console.log('Cache miss');

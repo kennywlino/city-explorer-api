@@ -11,7 +11,9 @@ async function getMovies (request, response, next) {
 
     let movieDataUrl = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&language=en-US&page=1&include_adult=false&query=${cityName}`;
 
-    if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+
+    // 2.628e+9 = 1 month
+    if (cache[key] && (Date.now() - cache[key].timestamp < 2.628e+9)) {
       console.log('Cache hit for movies');
     } else {
       console.log('Cache missed for movies');
