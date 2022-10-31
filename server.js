@@ -7,7 +7,6 @@ const express = require('express');
 require('dotenv').config();
 
 const cors = require('cors');
-const axios = require('axios');
 
 const getWeather = require('./modules/weather');
 const getMovies = require('./modules/movies');
@@ -34,7 +33,7 @@ app.get('/', (request, response) => {
   response.status(200).send('Welcome to my server');
 });
 
-app.get('/movies', getMovies); 
+app.get('/movies', getMovies);
 app.get('/weather', getWeather);
 
 

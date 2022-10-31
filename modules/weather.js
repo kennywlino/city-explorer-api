@@ -1,31 +1,43 @@
 'use strict';
 
+let cache = require('./cache.js');
 const axios = require('axios');
 
-async function getWeather (request, response, next) {
+async function getWeather(request, response) {
+  let latitude = request.query.lat;
+  let longitude = request.query.lon;
+
+  const key = 'weather-' + latitude + longitude;
+  const url = `http://api.weatherbit.io/v2.0/forecast/daily/?key=${process.env.WEATHER_API_KEY}&lang=en&lat=${latitude}&lon=${longitude}&days=5`;
+
+  // 4.32e+7 = 12 hours
+  if (cache[key] && (Date.now() - cache[key].timestamp < 4.32e+7)) {
+    console.log('Cache hit');
+  } else {
+    console.log('Cache miss');
+    cache[key] = {};
+    cache[key].timestamp = Date.now();
+    cache[key].data = await axios.get(url)
+      .then(response => parseWeather(response.data));
+  }
+  response.status(200).send(cache[key].data);
+}
+
+function parseWeather(weatherData) {
   try {
-    let lat = request.query.lat;
-    let lon = request.query.lon;
-    let numOfDays = 7;
-
-    // commenting out this line since lat/lon from LocationIQ API is not matching the sample data
-    //let weatherData = data.find(element => element.city_name === searchQuery && element.lat === lat && element.lon === lon);
-    // let cityWeatherData = data.find(element => element.city_name === cityName);
-
-    let weatherDataUrl = `http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lat=${lat}&lon=${lon}&days=${numOfDays}`;
-    let weatherData = await axios.get(weatherDataUrl);
-    let forecastList = weatherData.data.data.map(element => new Forecast(element));
-    response.status(200).send(forecastList);
-  } catch(error) {
-    next(error);
-    response.status(500).send(error.message);
+    const weatherSummaries = weatherData.data.map(day => {
+      return new Weather(day);
+    });
+    return Promise.resolve(weatherSummaries);
+  } catch (e) {
+    return Promise.reject(e);
   }
 }
 
-class Forecast {
-  constructor(forecastData) {
-    this.date = forecastData.datetime;
-    this.description = `Low of ${forecastData.low_temp}, high of ${forecastData.max_temp} with ${forecastData.weather.description}`;
+class Weather {
+  constructor(day) {
+    this.description = `Low of ${day.low_temp}, high of ${day.max_temp} with ${day.weather.description}`;
+    this.time = day.datetime;
   }
 }
 
